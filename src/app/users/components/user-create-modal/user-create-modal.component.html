@@ -1,0 +1,16 @@
+<div class="example-container">
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="fill" [floatLabel]="'Name'">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Enter name" required formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="'Job'">
+      <mat-label>Job</mat-label>
+      <input matInput placeholder="Enter job" formControlName="job">
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="userForm.invalid" color="primary"
+      (click)="handleUserCreation()">Submit</button>
+  </form>
+</div>
