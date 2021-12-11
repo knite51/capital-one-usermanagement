@@ -7,26 +7,6 @@ import { LocalStorageService } from '../utils/LocalStorage';
   providedIn: 'root',
 })
 export class GeneralService {
-  expiredToken = new BehaviorSubject<any>('');
-
-  getDateformat(date) {
-    let day = new Date(date).getDate() < 10 ? `0${new Date(date).getDate()}` : new Date(date).getDate();
-    let month = new Date(date).getMonth() + 1 < 10 ? `0${new Date(date).getMonth() + 1}` : new Date(date).getMonth() + 1
-    let year = new Date(date).getFullYear()
-
-    return `${year}-${month}-${day}`
-  }
-
-  checkPhoneDigits(data) {
-    switch (data === 11) {
-      case true:
-        return '';
-      case false:
-        return 'Mobile cannot be fewer or exceed 11 digits';
-      default:
-        return '';
-    }
-  }
 
   sweetAlertCreate(type) {
     return Swal.fire({

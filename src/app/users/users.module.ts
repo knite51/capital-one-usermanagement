@@ -5,6 +5,8 @@ import { SharedModule } from '../shared/shared.module';
 import { MatStyleModule } from '../mat-style.module';
 import { RouterModule } from '@angular/router';
 import { UsersListService } from './users-list.service';
+import { UserViewComponent } from './components/user-view/user-view.component';
+import { UserCreateModalComponent } from './components/user-create-modal/user-create-modal.component';
 
 const routes = [
   {
@@ -17,13 +19,15 @@ const routes = [
 ]
 
 @NgModule({
-  declarations: [UserListComponent],
+  declarations: [UserListComponent, UserViewComponent, UserCreateModalComponent],
+  entryComponents: [UserCreateModalComponent],
   imports: [
     SharedModule,
     MatStyleModule,
     RouterModule.forChild(routes)
   ],
   exports: [UserListComponent],
-  providers: [UsersListService]
+  providers: [UsersListService],
+
 })
 export class UsersModule { }

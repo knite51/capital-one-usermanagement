@@ -69,7 +69,7 @@ export class EndpointsService {
 
   delete(url, id) {
     try {
-      return this.http.delete(`${this.host}${url}${id}`).pipe(catchError(this.handleError));
+      return this.http.delete(`${this.host}${url}/${id}`).pipe(catchError(this.handleError));
     } catch (error) {
       this.handleError;
     }
