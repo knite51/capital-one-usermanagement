@@ -1,22 +1,30 @@
-  <div class="bodyBackground row">
-    <div class="col-md-12">
-      <div class="wrapper">
-        <div class="cardShadow">
-          <div class="circle circle1"></div>
-          <div class="circle circle2"></div>
-          <div class="block1">
-            <div class="logo">
-              <h1>LOGIN</h1>
-            </div>
-            <form [formGroup]="loginForm">
-              <input type="text" name="email" formControlName="email" placeholder="Email">
-              <input type="password" name="password" formControlName="password" placeholder="Password">
-              <button type="button" [disabled]="loginForm.invalid" (click)="handleLogin()" [ladda]="isLoading"
-                data-style="slide-left">Login</button>
-            </form>
+<div class="bodyBackground row">
+  <div class="col-md-12">
+    <div class="wrapper">
+      <div class="cardShadow">
+
+        <div class="block">
+          <div class="logo">
+            <h1>LOGIN</h1>
           </div>
 
+          <form [formGroup]="loginForm">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput type="text" name="email" formControlName="email" placeholder="Email">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" name="password" formControlName="password" placeholder="Password">
+            </mat-form-field>
+
+            <button type="button" [disabled]="loginForm.invalid" (click)="handleLogin()" [ladda]="isLoading"
+              data-style="slide-left">Login</button>
+          </form>
         </div>
+
       </div>
     </div>
   </div>
+</div>
