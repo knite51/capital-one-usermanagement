@@ -20,10 +20,12 @@ export class UserViewComponent implements OnInit {
     private router: Router, private generalServ: GeneralService) {
     this.route.params.subscribe(res => {
       const { id } = res;
-      this.endpoint.fetchOne(this.usersUrl, id).subscribe(res => {
-        const { data } = res;
-        this.userDetails = data;
-      })
+      if (id) {
+        this.endpoint.fetchOne(this.usersUrl, id).subscribe(res => {
+          const { data } = res;
+          this.userDetails = data;
+        })
+      }
 
     })
   }
