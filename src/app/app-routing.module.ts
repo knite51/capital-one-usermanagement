@@ -14,10 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   },
 
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'users/list', pathMatch: 'full' },
   {
     path: '**',
-    redirectTo: 'auth/login'
+    redirectTo: 'users/list'
   }
 ];
 
