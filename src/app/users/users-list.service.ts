@@ -24,9 +24,9 @@ export class UsersListService implements Resolve<any> {
   }
 
 
-  getDataTableRows(): Promise<any[]> {
+  getDataTableRows(pageNumber = 1): Promise<any[]> {
     return new Promise((resolve, reject) => {
-      this._httpClient.get(`${this.host}api/users?page=1`).subscribe((response: any) => {
+      this._httpClient.get(`${this.host}api/users?page=${pageNumber}`).subscribe((response: any) => {
         this.rows = response;
         this.onDatatablessChanged.next(this.rows);
         resolve(this.rows);
