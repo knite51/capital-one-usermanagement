@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div id="recent-transactions" class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-md-10">
+              <h4 class="card-title">USER'S INFORMATION</h4>
+              <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-sm btn-blue-grey" routerLink="/users/list" style="float: right;">Back</button>
+            </div>
+          </div>
+
+          <hr><br />
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="text-center">
+                <img [src]="userDetails.avatar" class="avatar img-circle img-thumbnail" alt="avatar">
+                <h6>Upload a different photo...</h6>
+                <input type="file" class="text-center center-block file-upload">
+              </div>
+
+
+            </div>
+            <div class="col-sm-9">
+              <div class="form-actions top">
+                <button mat-raised-button [color]="buttonTitle === 'Edit' ? 'primary' : 'accent'"
+                  (click)="handleEdit();">{{buttonTitle}}</button>
+              </div>
+            </div>
+
+          </div>
+
+          <br>
+          <hr><br>
+
+          <form class="form form-horizontal row-separator">
+            <div id="steady-spinner" *ngIf="(userDetails | json) === '{}'; else displayForm"></div>
+            <ng-template #displayForm>
+              <div class="form-body">
+                <h4 class="form-section"><i class="la la-eye"></i> About User</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row mx-auto">
+                      <label class="col-md-3 label-control" for="userinput1">First Name</label>
+                      <div class="col-md-9">
+                        <input type="text" id="userinput1" class="form-control border-primary" placeholder="First Name"
+                          name="firstname" [(ngModel)]="userDetails.first_name" [disabled]="buttonTitle === 'Edit'">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group row mx-auto">
+                      <label class="col-md-3 label-control" for="userinput2">Last Name</label>
+                      <div class="col-md-9">
+                        <input type="text" id="userinput2" class="form-control border-primary" placeholder="Last Name"
+                          name="lastname" [(ngModel)]="userDetails.last_name" [disabled]="buttonTitle === 'Edit'">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group row mx-auto last">
+                      <label class="col-md-3 label-control" for="userinput3">Email</label>
+                      <div class="col-md-9">
+                        <input type="email" id="userinput3" class="form-control border-primary" placeholder="Email"
+                          name="email" [(ngModel)]="userDetails.email" [disabled]="buttonTitle === 'Edit'">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,6 +16,10 @@ const routes = [
     },
     component: UserListComponent,
   },
+  {
+    path: 'view/:id',
+    component: UserViewComponent,
+  },
 ]
 
 @NgModule({
@@ -26,7 +30,7 @@ const routes = [
     MatStyleModule,
     RouterModule.forChild(routes)
   ],
-  exports: [UserListComponent],
+  exports: [UserListComponent, UserViewComponent],
   providers: [UsersListService],
 
 })
