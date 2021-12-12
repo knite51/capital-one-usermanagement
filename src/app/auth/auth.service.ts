@@ -31,6 +31,6 @@ export class AuthService {
   logout(): void {
     this.localstorage.deleteFromLocalStorage('Usertoken');
     this.isLoggedIn = false;
-    this.router.navigate(['/login']);
+    this.router.navigate(['/auth/login']);
   }
 }

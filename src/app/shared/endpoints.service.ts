@@ -40,17 +40,9 @@ export class EndpointsService {
     }
   }
 
-  fetchAll(url) {
-    try {
-      return this.http.get(`${this.host}${url}`).pipe(catchError(this.handleError));
-    } catch (error) {
-      this.handleError;
-    }
-  }
-
   fetchOne(url, id) {
     try {
-      return this.http.get(`${this.host}${url}${id}`).pipe(catchError(this.handleError));
+      return this.http.get(`${this.host}${url}/${id}`).pipe(catchError(this.handleError));
     } catch (error) {
       this.handleError;
     }
@@ -59,7 +51,7 @@ export class EndpointsService {
   edit(url, id, payload) {
     try {
       return this.http.patch(
-        `${this.host}${url}${id}`,
+        `${this.host}${url}/${id}`,
         payload
       ).pipe(catchError(this.handleError));
     } catch (error) {

@@ -26,19 +26,8 @@ export class GeneralService {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, create it!"
+      confirmButtonText: "Yes, update it!"
     });
-  }
-
-  sweetAlertSuccess(msg) {
-    return Swal.fire(
-      {
-        // icon: 'success',
-        title: 'Done',
-        text: msg,
-        showConfirmButton: false,
-        timer: 3000
-      })
   }
 
   sweetAlertError(msg) {
